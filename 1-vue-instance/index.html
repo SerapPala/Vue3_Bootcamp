@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!--String interpolation-->
+        <h1>{{ title }}</h1>
+        <h2>{{ title2 }}</h2>
+        <h3>{{ title3 }}</h3>
+        <p>{{ content }}</p>
+
+        <!--Attribute bind-->
+        <a :target="eduflow.target" :href="eduflow.url" v-bind:alt="eduflow.alt" v-bind:kablosuzkedi="owner">
+            {{ eduflow.title }}</a>
+
+            <a :target="eduflow.target" :href="eduflow.url" v-bind:alt="eduflow.alt" v-bind:kablosuzkedi="owner">
+                {{ eduflow.title2 }}</a>
+
+
+        <br />
+        <br />
+        <!--v-on:click @click-->
+            <button v-on:click="changeTitle">Title Değiştir..</button>
+            <button v-on:click="changeTitle2">Title 2 Değiştir..</button>
+
+            <button v-on:click="changeTitleParametres('bu parametreden gelen title 1')">Title Değiştir..</button>
+            <button v-on:click="changeTitleParametres2('bu parametreden gelen title 2')">Title 2 Değiştir..</button>
+            <br />
+            <br />
+
+            <div @mousemove="updateCoords('mousemoove', $event)" class="box" @click="changeBoxTitle('bu da box üzerinden gelen değişmiş title 3 bilgisi')"></div>
+
+            <span>{{ coords.x }} , {{ coords.y }}</span>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
